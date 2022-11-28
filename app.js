@@ -29,6 +29,11 @@ app.post("/clear", (request, response) => {
     response.redirect("/")
 })
 
+app.post("/remove", (request, response) => {
+    list.splice(request.body.remove, 1)
+    response.redirect("/")
+})
+
 app.listen(3000, () => {
     console.log("\nStarted\n");
 })
